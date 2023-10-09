@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "houses",
+  "info": {
+    "singularName": "house",
+    "pluralName": "houses",
+    "displayName": "House",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "television": {
+      "type": "string"
+    },
+    "led": {
+      "type": "string"
+    },
+    "animal": {
+      "type": "richtext"
+    },
+    "cat": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "datajson": {
+      "type": "json"
+    },
+    "number": {
+      "type": "uid",
+      "targetField": "led"
+    },
+    "people": {
+      "type": "integer"
+    }
+  }
+}

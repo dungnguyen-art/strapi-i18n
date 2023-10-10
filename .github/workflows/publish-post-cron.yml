@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         run: |
-          curl -s https://github.com/dungnguyen-art/strapi-i18n/tree/main/src/api/article/cron/published-count
+          curl -s https://github.com/dungnguyen-art/strapi-i18n/blob/main/src/api/article/controllers/article.js

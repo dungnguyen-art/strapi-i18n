@@ -2,8 +2,8 @@ module.exports = {
     routes: [
       {
         method: "GET",
-        path: "/articles/cron/published-count",
-        handler: "api::article.article.cronPublishedCount",
+        path: "/articles/count", // tai sao lai co 's' tai article
+        handler: "article.count", // tai sao khong co 's' tai article
       },
     ],
   };

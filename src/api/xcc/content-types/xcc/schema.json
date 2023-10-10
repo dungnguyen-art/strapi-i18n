@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "xccs",
+  "info": {
+    "singularName": "xcc",
+    "pluralName": "xccs",
+    "displayName": "xcc"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "i18ns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "test.yup"
+    }
+  }
+}

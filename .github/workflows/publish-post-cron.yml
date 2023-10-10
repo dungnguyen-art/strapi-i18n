@@ -1,0 +1,11 @@
+name: post-count-cron
+on:
+  schedule:
+    - cron: ‘*/5 * * * *'
+  workflow_dispatch:
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+        run: |
+          curl -s https://raw.githubusercontent.com/dungnguyen-art/i18n/main/src/crawl/extension/Json/en.json

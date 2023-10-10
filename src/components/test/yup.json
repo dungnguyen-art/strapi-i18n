@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_test_yups",
+  "info": {
+    "displayName": "yup"
+  },
+  "options": {},
+  "attributes": {
+    "env": {
+      "type": "enumeration",
+      "enum": [
+        "web",
+        "mobi",
+        "extension"
+      ]
+    },
+    "en": {
+      "type": "string"
+    },
+    "vi": {
+      "type": "string"
+    },
+    "es": {
+      "type": "string"
+    }
+  }
+}

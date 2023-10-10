@@ -677,6 +677,40 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+    slug: Attribute.String;
+    cover: Attribute.Media;
+    body: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHouseHouse extends Schema.CollectionType {
   collectionName: 'houses';
   info: {
@@ -854,6 +888,29 @@ export interface ApiReviewReview extends Schema.CollectionType {
   };
 }
 
+export interface ApiXccXcc extends Schema.CollectionType {
+  collectionName: 'xccs';
+  info: {
+    singularName: 'xcc';
+    pluralName: 'xccs';
+    displayName: 'xcc';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    key: Attribute.String;
+    i18ns: Attribute.Component<'test.yup', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::xcc.xcc', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::xcc.xcc', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -870,11 +927,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::article.article': ApiArticleArticle;
       'api::house.house': ApiHouseHouse;
       'api::i18n.i18n': ApiI18NI18N;
       'api::i18n-another-version.i18n-another-version': ApiI18NAnotherVersionI18NAnotherVersion;
       'api::i18n-v3.i18n-v3': ApiI18NV3I18NV3;
       'api::review.review': ApiReviewReview;
+      'api::xcc.xcc': ApiXccXcc;
     }
   }
 }

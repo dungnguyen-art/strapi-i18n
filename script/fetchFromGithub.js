@@ -171,6 +171,7 @@ const fetchAllData = async () => {
 // Call the fetchAllData function and log its result
 fetchAllData()
   .then((result) => {
+    console.log(result);
     return result; 
   })
   .catch((error) => {

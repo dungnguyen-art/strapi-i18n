@@ -1,7 +1,8 @@
 name: Fetch Data from GitHub
 
 on:
-  schedule:
+  push:
+  # schedule:
     # - cron: '*/5 * * * *'
 
 jobs:

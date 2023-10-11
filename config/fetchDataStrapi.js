@@ -45,7 +45,7 @@ module.exports = {
     options: {
       // Define your cron schedule here
       // For example, to run the task every day at 2:00 AM:
-      cron: "1 * * * *",
+      cron: "*/1 * * * *",
     },
   },
 };

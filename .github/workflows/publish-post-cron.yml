@@ -2,7 +2,7 @@ name: Fetch Data from GitHub
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    # - cron: '*/5 * * * *'
 
 jobs:
   fetchFromGithub:

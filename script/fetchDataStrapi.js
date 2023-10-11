@@ -46,3 +46,11 @@ const fetchDataFromStrapi = async () => {
 
 // console.log("Calling fetchDataFromStrapi function");
 // fetchDataFromStrapi();
+fetchDataFromStrapi()
+  .then((result) => {
+    console.log(result);
+    return result; 
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });

@@ -1,4 +1,4 @@
-name: Run fetchFromGithub
+name: Fetch Data from GitHub
 
 on:
   schedule:
@@ -9,25 +9,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 18
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run fetchFromGithub.js
-      id: fetch-result
-      run: node script/fetchFromGithub.js
+      - name: Run fetchFromGithub.js
+        id: fetch-result
+        run: node script/fetchFromGithub.js
 
-    - name: Set the output of fetchFromGithub.js to a variable
-      id: set-output
-      run: echo "::set-output name=fetchResult::${{ steps.fetch-result.outputs.fetchResult }}"
+      - name: Set the output of fetchFromGithub.js to a variable
+        id: set-output
+        run: echo "::set-output name=fetchResult::${{ steps.fetch-result.outputs.fetchResult }}"
 
-    - name: Use the fetchResult variable
-      run: echo "The fetchResult variable is ${{ steps.set-output.outputs.fetchResult }}"
-    
+      - name: Use the fetchResult variable
+        run: echo "The fetchResult variable is ${{ steps.set-output.outputs.fetchResult }}"

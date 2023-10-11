@@ -1,4 +1,4 @@
-// const cronTasks = require("./githubToStrapiCron")
+// const cronTasks1 = require("./githubToStrapiCron")
 const cronTasks = require("./cron-tasks")
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
@@ -10,7 +10,7 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
   cron: {
-    enabled: false,
-    tasks: cronTasks,
+    enabled: true,
+    tasks:cronTasks
   },
 });

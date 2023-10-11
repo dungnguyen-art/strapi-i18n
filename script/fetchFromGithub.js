@@ -167,3 +167,12 @@ const fetchAllData = async () => {
 
 //   Call the fetchAllData function to fetch and process the data
 // export const MergeDataCrawl2 = await fetchAllData();
+// Call the fetchAllData function and log its result
+fetchAllData()
+  .then((result) => {
+    console.log("Result:", result);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+

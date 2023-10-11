@@ -31,3 +31,6 @@ jobs:
 
     - name: Use the fetchResult variable
       run: echo "The fetchResult variable is ${{ steps.set-output.outputs.fetchResult }}"
+    
+    - name: Another Step
+      run: echo "Another step that uses the fetchedData: ${{ steps.fetch-result.outputs.fetchedData }}"

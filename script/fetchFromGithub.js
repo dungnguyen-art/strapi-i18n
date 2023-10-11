@@ -76,7 +76,7 @@ const fetchAllData = async () => {
       }
     }
 
-    console.log("combinedExtension", combinedExtension);
+    // console.log("combinedExtension", combinedExtension);
 
     // Get all data web
     const data_web_en = await fetchDataGithub(url_web_en);
@@ -104,7 +104,7 @@ const fetchAllData = async () => {
       }
     }
 
-    console.log("combinedWeb", combinedWeb);
+    // console.log("combinedWeb", combinedWeb);
     // Get all data mobi
     const data_mobi_en = await fetchDataGithub(url_mobi_en);
     const data_mobi_es = await fetchDataGithub(url_mobi_es);
@@ -130,7 +130,7 @@ const fetchAllData = async () => {
         };
       }
     }
-    console.log("combinedMobi", combinedMobi);
+    // console.log("combinedMobi", combinedMobi);
 
     // MergeDataGithub
     // Define the languages you want to merge

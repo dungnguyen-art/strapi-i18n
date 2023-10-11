@@ -23,3 +23,10 @@ jobs:
 
     - name: Run fetchFromGithub.js
       run: node script/fetchFromGithub.js
+
+    - name: Set result as an output
+      run: echo "::set-output name=fetchResult::$(cat ${{ steps.fetch-result.outputs.stdout }})"
+    
+    - name: Use the fetchResult
+      run: echo "The fetchResult is ${{ steps.fetch-result.outputs.fetchResult }}"
+

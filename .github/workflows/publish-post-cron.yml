@@ -25,10 +25,9 @@ jobs:
       id: fetch-result
       run: node script/fetchFromGithub.js
 
-    - name: Set output
+    - name: Set the output of fetchFromGithub.js to a variable
       id: set-output
-      run: echo "{name}={value}" >> $GITHUB_OUTPUT
+      run: echo "::set-output name=fetchResult::${{ steps.fetch-result.outputs.fetchResult }}"
 
-    - name: Use the fetchResult
-      id: use-fetch-result
-      run: echo "The fetchResult is ${{ steps.fetch-result.outputs.fetchResult }}"
+    - name: Use the fetchResult variable
+      run: echo "The fetchResult variable is ${{ steps.set-output.outputs.fetchResult }}"

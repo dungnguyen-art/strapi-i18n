@@ -1,5 +1,5 @@
-// const cronTasks1 = require("./githubToStrapiCron")
-const cronTasks = require("./cron-tasks")
+const cronTasks1 = require("./fetchDataStrapi")
+// const cronTasks = require("./cron-tasks")
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1338),
@@ -11,6 +11,6 @@ module.exports = ({ env }) => ({
   },
   cron: {
     enabled: true,
-    tasks:cronTasks
+    tasks:cronTasks1
   },
 });

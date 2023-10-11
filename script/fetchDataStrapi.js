@@ -14,7 +14,7 @@ const fetchDataFromStrapi = async () => {
         "ja",
         "es"
     ]
-    //   console.log("mergedDataKeys", mergedDataKeys);
+      // console.log("mergedDataKeys", mergedDataKeys);
       // mergedDataKeys.push("platform");
 
       // // Restructure dataStrapi to match the structure of mergedData and remove extra keys
@@ -43,3 +43,6 @@ const fetchDataFromStrapi = async () => {
       console.error("Error fetching data from Strapi:", error);
     }
   };
+
+// console.log("Calling fetchDataFromStrapi function");
+// fetchDataFromStrapi();

@@ -1,4 +1,5 @@
 //  Import the fetchDataGithub function if it's defined in a separate module
+let fetchedData;
 const fetchDataGithub = async (url) => {
   try {
     const response = await fetch(url);
@@ -170,7 +171,7 @@ const fetchAllData = async () => {
 // Call the fetchAllData function and log its result
 fetchAllData()
   .then((result) => {
-    console.log("Result:", result);
+    return result; 
   })
   .catch((error) => {
     console.error("Error:", error);

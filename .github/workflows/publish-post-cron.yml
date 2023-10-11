@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  fetchFromGithub:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,11 +22,13 @@ jobs:
       run: npm install
 
     - name: Run fetchFromGithub.js
+      id: fetch-result
       run: node script/fetchFromGithub.js
 
-    - name: Set result as an output
-      run: echo "::set-output name=fetchResult::$(cat ${{ steps.fetch-result.outputs.stdout }})"
-    
-    - name: Use the fetchResult
-      run: echo "The fetchResult is ${{ steps.fetch-result.outputs.fetchResult }}"
+    - name: Set output
+      id: set-output
+      run: echo "{name}={value}" >> $GITHUB_OUTPUT
 
+    - name: Use the fetchResult
+      id: use-fetch-result
+      run: echo "The fetchResult is ${{ steps.fetch-result.outputs.fetchResult }}"

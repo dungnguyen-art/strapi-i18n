@@ -7,7 +7,6 @@ module.exports = {
           fields: ["key", "en", "vi", "ja", "zh", "es"],
         }
       );
-      console.log("entry", entries);
 
       const fetchDataGithub = async (url) => {
         try {
@@ -24,6 +23,7 @@ module.exports = {
           throw error; // Re-throw the error to handle it later if needed
         }
       };
+
 
       const fetchAllData = async () => {
         // Get all URL gihub the data extensions
@@ -182,16 +182,27 @@ module.exports = {
                       zh: mergedItem.zh,
                       ja: mergedItem.ja,
                       es: mergedItem.es,
+                      publishedAt: new Date(),
                     },
                   }
                 );
+                // const publishedEntry = await strapi.entityService.update(
+                //   "api::i18n-v3.i18n-v3",
+                //   entryId,
+                //   {
+                //     data: {
+                //       published_at: new Date(),
+                //     },
+                //   }
+                // );
+                  
                 return entry;
               }
 
-              MergeDataCrawl.push(mergedItem);
+              // MergeDataCrawl.push(mergedItem);
             }
           }
-          return MergeDataCrawl;
+          // return MergeDataCrawl;
         } catch (error) {
           // Handle errors here if needed
           console.error("Error:", error);
@@ -201,7 +212,7 @@ module.exports = {
     },
     options: {
       // Every minute
-      rule: "*/5 * * * *",
+      rule: "*/1 * * * *",
     },
   },
 };

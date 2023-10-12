@@ -5,7 +5,7 @@ module.exports = {
         publicationState: "live",
       });
 
-      console.log(`Sending email with published article count ${count} (run by Strapi cron)`);
+      console.log(`cronTask1----Sending email with published article count ${count} (run by Strapi cron)`);
       try {
         await strapi.plugins.email.services.email.send({
           to: "dungtpa2@gmail.com",

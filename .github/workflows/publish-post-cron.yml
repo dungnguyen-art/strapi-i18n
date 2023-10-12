@@ -23,7 +23,7 @@ jobs:
 
       - name: Run fetchFromGithub.js
         id: fetch-result
-        run: node script/fetchFromGithub.js
+        run: node config/fetchFromGithub.js
 
       - name: Set the output of fetchFromGithub.js to a variable
         id: set-output

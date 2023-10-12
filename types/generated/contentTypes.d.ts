@@ -683,12 +683,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     singularName: 'article';
     pluralName: 'articles';
     displayName: 'Article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
     description: Attribute.String;
     slug: Attribute.String;
     cover: Attribute.Media;

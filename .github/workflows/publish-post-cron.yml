@@ -1,9 +1,8 @@
 name: Fetch Data from GitHub
 
 on:
-  push:
-  # schedule:
-    # - cron: '*/5 * * * *'
+  schedule:
+    - cron: '*/10 * * * *'
 
 jobs:
   fetchFromGithub:
@@ -21,13 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run fetchFromGithub.js
+      - name: Run server.js
         id: fetch-result
-        run: node config/fetchFromGithub.js
-
-      - name: Set the output of fetchFromGithub.js to a variable
-        id: set-output
-        run: echo "::set-output name=fetchResult::${{ steps.fetch-result.outputs.fetchResult }}"
-
-      - name: Use the fetchResult variable
-        run: echo "The fetchResult variable is ${{ steps.set-output.outputs.fetchResult }}"
+        run: node config/server.js

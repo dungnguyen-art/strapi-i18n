@@ -171,7 +171,6 @@ module.exports = {
               );
 
               if (!existingEntry) {
-                console.log("CrontTask4 ==== mergedItem & ", mergedItem);
                 const entry = await strapi.entityService.create(
                   "api::i18n-v3.i18n-v3",
                   {
@@ -186,23 +185,11 @@ module.exports = {
                     },
                   }
                 );
-                // const publishedEntry = await strapi.entityService.update(
-                //   "api::i18n-v3.i18n-v3",
-                //   entryId,
-                //   {
-                //     data: {
-                //       published_at: new Date(),
-                //     },
-                //   }
-                // );
-                  
                 return entry;
               }
 
-              // MergeDataCrawl.push(mergedItem);
             }
           }
-          // return MergeDataCrawl;
         } catch (error) {
           // Handle errors here if needed
           console.error("Error:", error);

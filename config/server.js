@@ -1,6 +1,3 @@
-const cronTasks1 = require("./cron-task")
-const cronTasks = require("./cron-tasks1")
-const cronTasks_i18n = require("./i18n-v3-cron")
 const crontask_create = require("./cron-task-create")
 
 module.exports = ({ env }) => ({
